@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: BelidoMap
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+      username: ${DB_USERNAME}
+      password: ${DB_PASSWORD}
+      url: ${DB_URL}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

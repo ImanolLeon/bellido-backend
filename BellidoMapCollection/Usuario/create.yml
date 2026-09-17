@@ -1,0 +1,28 @@
+info:
+  name: create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/usuario/create
+  body:
+    type: json
+    data: |-
+      {
+        "dni":"61230111",
+        "nombre": "manolito Rojas",
+        "apellido": "Leon Cordova",
+        "direccion": "santa isabel",
+        "correo": "imanolleon@gmail.com",
+        "fechaNacimiento" : "22/06/2005",
+        "edad" : "20"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
