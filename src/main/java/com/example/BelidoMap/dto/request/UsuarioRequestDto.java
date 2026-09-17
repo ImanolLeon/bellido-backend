@@ -9,4 +9,5 @@ public record UsuarioRequestDto(
         String sexo,
         String fechaNacimiento,
         long edad
+
 ) { }
