@@ -22,4 +22,6 @@ public class Seccion {
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "seccion")
     private List<SalonAsignado> salonesAsignados;
 
+
+
 }
