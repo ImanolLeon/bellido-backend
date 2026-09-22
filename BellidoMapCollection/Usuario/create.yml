@@ -10,16 +10,20 @@ http:
     type: json
     data: |-
       {
-        "dni":"61230119",
+        "dni":"61230112",
+        "password": "123456",
         "nombre": "manolito Rojas",
         "apellido": "Leon Cordova",
         "direccion": "santa isabel",
         "correo": "imanolleon@gmail.com",
         "fechaNacimiento" : "22/06/2005",
+        "admin" : false,
         "edad" : "20",
         "sexo" : "masculino"
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiI2MTIzMDExOSIsImlhdCI6MTc5MDEwMTgyNCwiZXhwIjoxNzkwMTg4MjI0fQ.CKr-20OvzINvhOZrEkS7Vkzp7E_XQh-0aHXcOxkQelqyezs5kEYvMxlwso9dMiXx
 
 settings:
   encodeUrl: true

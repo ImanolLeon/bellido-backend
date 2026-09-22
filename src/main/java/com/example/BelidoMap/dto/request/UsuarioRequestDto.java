@@ -7,6 +7,8 @@ public record UsuarioRequestDto(
         @NotBlank @NotNull
         String dni,
         @NotBlank @NotNull
+        String password,
+        @NotBlank @NotNull
         String nombre,
         @NotBlank @NotNull
         String apellido,
@@ -18,6 +20,7 @@ public record UsuarioRequestDto(
         String sexo,
         @NotBlank @NotNull
         String fechaNacimiento,
+        boolean admin,
         @NotNull
         long edad
 

@@ -18,6 +18,9 @@ public class Usuario {
     @Column(unique = true,nullable = false)
     private String dni;
 
+    @Column(nullable = false)
+    private String password;
+
     private String nombre;
     private String apellido;
     private String direccion;
@@ -25,9 +28,11 @@ public class Usuario {
     private String sexo;
     @Column(name = "fecha_nacimiento")
     private String fechaNacimiento;
+
+    @Column(nullable = false)
+    private boolean admin;
     private long edad;
     private LocalDate fechaRegistro;
-
     @OneToOne(mappedBy = "usuario")
     private Estudiante estudiante;
 

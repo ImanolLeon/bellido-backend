@@ -2,6 +2,8 @@ package com.example.BelidoMap.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,6 +15,24 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ProblemDetail manejarAccessDenied(AccessDeniedException ex) {
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(
+                HttpStatus.FORBIDDEN, "No tienes permisos para acceder a este recurso");
+        problemDetail.setTitle("Acceso denegado");
+        problemDetail.setProperty("fecha", LocalDateTime.now());
+        return problemDetail;
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ProblemDetail manejarBadCredentials(BadCredentialsException ex) {
+        ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(
+                HttpStatus.UNAUTHORIZED, "Credenciales inválidas");
+        problemDetail.setTitle("Error de autenticación");
+        problemDetail.setProperty("fecha", LocalDateTime.now());
+        return problemDetail;
+    }
 
     @ExceptionHandler(ApiException.class)
     public ProblemDetail manejarApiException(ApiException ex) {

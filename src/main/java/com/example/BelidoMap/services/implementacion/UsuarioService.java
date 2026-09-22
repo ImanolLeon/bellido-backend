@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -21,6 +22,7 @@ import java.time.LocalDate;
 public class UsuarioService implements IUsuario {
 
     private UsuarioRepositorio usuarioRepositorio;
+    private PasswordEncoder passwordEncoder;
 
 
     @Override
@@ -29,12 +31,14 @@ public class UsuarioService implements IUsuario {
 
         Usuario usuario = Usuario.builder()
                 .dni(usuarioRequestDto.dni())
+                .password(passwordEncoder.encode(usuarioRequestDto.password()))
                 .nombre(usuarioRequestDto.nombre())
                 .apellido(usuarioRequestDto.apellido())
                 .correo(usuarioRequestDto.correo())
                 .sexo(usuarioRequestDto.sexo())
                 .direccion(usuarioRequestDto.direccion())
                 .fechaNacimiento(usuarioRequestDto.fechaNacimiento())
+                .admin(usuarioRequestDto.admin())
                 .edad(usuarioRequestDto.edad())
                 .fechaRegistro(LocalDate.now())
                 .build();
@@ -62,12 +66,14 @@ public class UsuarioService implements IUsuario {
 
         Usuario usuario = buscarId(id);
         usuario.setDni(usuarioRequestDto.dni());
+        usuario.setPassword(passwordEncoder.encode(usuarioRequestDto.password()));
         usuario.setNombre(usuarioRequestDto.nombre());
         usuario.setApellido(usuarioRequestDto.apellido());
         usuario.setDireccion(usuarioRequestDto.direccion());
         usuario.setCorreo(usuarioRequestDto.correo());
         usuario.setSexo(usuarioRequestDto.sexo());
         usuario.setFechaNacimiento(usuarioRequestDto.fechaNacimiento());
+        usuario.setAdmin(usuarioRequestDto.admin());
         usuario.setEdad(usuarioRequestDto.edad());
 
         usuarioRepositorio.save(usuario);

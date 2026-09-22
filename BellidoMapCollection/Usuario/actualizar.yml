@@ -11,11 +11,13 @@ http:
     data: |-
       {
         "dni":"61230111",
+        "password": "123456",
         "nombre": "manolito Rojas",
         "apellido": "Leon Cordova",
         "direccion": "santa isabel",
         "correo": "imanolleon@gmail.com",
         "fechaNacimiento" : "22/06/2005",
+        "admin" : false,
         "edad" : "21",
         "sexo" : "femenino"
       }
