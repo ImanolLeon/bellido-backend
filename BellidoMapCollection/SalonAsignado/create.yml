@@ -1,0 +1,25 @@
+info:
+  name: create
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/salon-asignado/create
+  body:
+    type: json
+    data: |-
+      {
+        "salonId": 1,
+        "seccionId": 1,
+        "gradoId": 1,
+        "turnoId": 1
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

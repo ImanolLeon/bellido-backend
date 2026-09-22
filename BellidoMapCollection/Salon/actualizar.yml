@@ -1,0 +1,23 @@
+info:
+  name: actualizar
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: http://localhost:8080/salon/1
+  body:
+    type: json
+    data: |-
+      {
+        "nombre": "Aula 102",
+        "cantidadAlumnos": 35
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

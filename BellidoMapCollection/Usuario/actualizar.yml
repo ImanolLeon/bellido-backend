@@ -1,0 +1,29 @@
+info:
+  name: actualizar
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: http://localhost:8080/usuario/1
+  body:
+    type: json
+    data: |-
+      {
+        "dni":"61230111",
+        "nombre": "manolito Rojas",
+        "apellido": "Leon Cordova",
+        "direccion": "santa isabel",
+        "correo": "imanolleon@gmail.com",
+        "fechaNacimiento" : "22/06/2005",
+        "edad" : "21",
+        "sexo" : "femenino"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

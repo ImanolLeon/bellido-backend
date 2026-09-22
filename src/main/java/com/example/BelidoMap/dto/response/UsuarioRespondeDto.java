@@ -6,6 +6,9 @@ import lombok.Builder;
 public record UsuarioRespondeDto(
     String dni,
     String nombre,
-    String estado
+    String apellido,
+    String correo,
+    String estado,
+    String mensaje
 ) {
 }

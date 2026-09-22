@@ -10,13 +10,14 @@ http:
     type: json
     data: |-
       {
-        "dni":"61230111",
+        "dni":"61230119",
         "nombre": "manolito Rojas",
         "apellido": "Leon Cordova",
         "direccion": "santa isabel",
         "correo": "imanolleon@gmail.com",
         "fechaNacimiento" : "22/06/2005",
-        "edad" : "20"
+        "edad" : "20",
+        "sexo" : "masculino"
       }
   auth: inherit
 

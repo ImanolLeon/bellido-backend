@@ -1,10 +1,7 @@
 package com.example.BelidoMap.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Apoderado {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,6 +21,6 @@ public class Apoderado {
     private Usuario usuario;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "apoderado")
-    private List<Estudiante> estudiantes;
+    private List<Estudiante> estudiante;
 
 }

@@ -1,0 +1,25 @@
+info:
+  name: actualizar
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: http://localhost:8080/salon-asignado/1
+  body:
+    type: json
+    data: |-
+      {
+        "salonId": 1,
+        "seccionId": 1,
+        "gradoId": 1,
+        "turnoId": 2
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

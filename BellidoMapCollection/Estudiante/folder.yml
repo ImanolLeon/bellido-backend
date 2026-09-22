@@ -1,0 +1,7 @@
+info:
+  name: Estudiante
+  type: folder
+  seq: 6
+
+request:
+  auth: inherit

@@ -3,6 +3,8 @@ package com.example.BelidoMap.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Getter
 @Setter
@@ -24,6 +26,7 @@ public class Usuario {
     @Column(name = "fecha_nacimiento")
     private String fechaNacimiento;
     private long edad;
+    private LocalDate fechaRegistro;
 
     @OneToOne(mappedBy = "usuario")
     private Estudiante estudiante;
