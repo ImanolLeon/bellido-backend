@@ -2,6 +2,12 @@
 
 API REST para la gestión académica del Colegio María Parado de Bellido. Desarrollada con Spring Boot 4, Spring Security + JWT, JPA/Hibernate y PostgreSQL.
 
+<img width="1332" height="597" alt="image" src="https://github.com/user-attachments/assets/9d0612d8-7d38-4fc1-8962-aeef2511a2ac" />
+
+<img width="1321" height="600" alt="image" src="https://github.com/user-attachments/assets/2e83f4ee-4794-4e72-ac42-900b3a96c66b" />
+
+
+
 ## Tecnologías
 
 - [Java](https://openjdk.org/) 25
